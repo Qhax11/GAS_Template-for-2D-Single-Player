@@ -31,6 +31,8 @@ void UAC_Moving2D::BeginPlay()
 		{
 			PaperCharacter->EnhancedInputComp->BindAction(LeftInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::MoveLeft);
 			PaperCharacter->EnhancedInputComp->BindAction(RightInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::MoveRight);
+			PaperCharacter->EnhancedInputComp->BindAction(JumpInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::Jump);
+
 		}
 	}
 	else
@@ -53,5 +55,10 @@ void UAC_Moving2D::MoveLeft(const FInputActionValue& Value)
 void UAC_Moving2D::MoveRight(const FInputActionValue& Value)
 {
 	PaperCharacter->AddMovementInput(FVector(0, 100, 0));
+}
+
+void UAC_Moving2D::Jump(const FInputActionValue& Value)
+{
+	PaperCharacter->Jump();
 }
 

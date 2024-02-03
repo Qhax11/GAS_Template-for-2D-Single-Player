@@ -34,9 +34,13 @@ public:
 	UPROPERTY(EditAnywhere)
 	const UInputAction* RightInputAction;
 
-	// Mouse + Gamepad
+	UPROPERTY(EditAnywhere)
+	const UInputAction* JumpInputAction;
+
 	void MoveLeft(const FInputActionValue& Value);
 		
-	// Mouse + Gamepad
 	void MoveRight(const FInputActionValue& Value);
+
+	void Jump(const FInputActionValue& Value);
+
 };
