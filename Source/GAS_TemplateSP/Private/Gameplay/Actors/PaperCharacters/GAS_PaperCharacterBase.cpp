@@ -1,11 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Qhax's GAS Template for 2D SinglePlayer
 
 
 #include "Gameplay/Actors/PaperCharacters/GAS_PaperCharacterBase.h"
 
 AGAS_PaperCharacterBase::AGAS_PaperCharacterBase()
 { 
-	AbilitySystem = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+	AbilitySystem = CreateDefaultSubobject<UGAS_AbilitySystemComponent>(TEXT("GAS_AbilitySystemComponent"));
 }
 
 UAbilitySystemComponent* AGAS_PaperCharacterBase::GetAbilitySystemComponent() const

@@ -1,11 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Qhax's GAS Template for 2D SinglePlayer
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "PaperCharacter.h"
 #include "AbilitySystemInterface.h"
-#include "AbilitySystemComponent.h"
+#include "Gameplay/Components/GAS_AbilitySystemComponent.h"
 #include "GAS_PaperCharacterBase.generated.h"
 
 
@@ -18,8 +18,11 @@ public:
 	AGAS_PaperCharacterBase();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Abilities, meta = (AllowPrivateAccess = "true"))
-	UAbilitySystemComponent* AbilitySystem;
+	UGAS_AbilitySystemComponent* AbilitySystem;
 	
 	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	
+
+	UPROPERTY(EditAnywhere)
+	UGAS_GameplayAbilitySet* AbilitySet;
+
 };

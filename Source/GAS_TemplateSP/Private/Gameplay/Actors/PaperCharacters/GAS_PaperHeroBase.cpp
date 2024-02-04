@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Qhax's GAS Template for 2D SinglePlayer
 
 
 #include "Gameplay/Actors/PaperCharacters/GAS_PaperHeroBase.h"
@@ -21,4 +21,12 @@ void AGAS_PaperHeroBase::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
     EnhancedInputComp = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+}
+
+void AGAS_PaperHeroBase::PossessedBy(AController* NewController)
+{
+    if (AbilitySystem) 
+    {
+        AbilitySystem->GiveAbilitySet(AbilitySet);
+    }
 }

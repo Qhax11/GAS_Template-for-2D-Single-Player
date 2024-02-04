@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Qhax's GAS Template for 2D SinglePlayer
 
 
 #include "BaseClasses/GAS_PlayerState.h"

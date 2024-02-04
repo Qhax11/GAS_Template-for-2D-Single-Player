@@ -1,5 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Qhax's GAS Template for 2D SinglePlayer
 
 #include "Gameplay/Components/AC_Moving2D.h"
 #include "GameFramework/PlayerController.h"
