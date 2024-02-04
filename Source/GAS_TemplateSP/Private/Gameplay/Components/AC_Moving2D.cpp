@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AC_Moving2D.h"
+#include "Gameplay/Components/AC_Moving2D.h"
 #include "GameFramework/PlayerController.h"
 
 // Sets default values for this component's properties
@@ -18,7 +18,7 @@ void UAC_Moving2D::BeginPlay()
 {
 	Super::BeginPlay();
 
-	PaperCharacter = Cast<AGAS_PaperCharacter>(GetOwner());
+	PaperCharacter = Cast<AGAS_PaperHeroBase>(GetOwner());
 	if (!PaperCharacter)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("PaperCharacter is null! (This message comes from %s)"), *this->GetName());
@@ -32,7 +32,6 @@ void UAC_Moving2D::BeginPlay()
 			PaperCharacter->EnhancedInputComp->BindAction(LeftInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::MoveLeft);
 			PaperCharacter->EnhancedInputComp->BindAction(RightInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::MoveRight);
 			PaperCharacter->EnhancedInputComp->BindAction(JumpInputAction, ETriggerEvent::Triggered, this, &UAC_Moving2D::Jump);
-
 		}
 	}
 	else

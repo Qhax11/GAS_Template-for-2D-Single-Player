@@ -3,30 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "PaperCharacter.h"
-#include "AbilitySystemInterface.h"
-#include "AbilitySystemComponent.h"
+#include "Gameplay/Actors/PaperCharacters/GAS_PaperCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "EnhancedInputComponent.h"
-#include "GAS_PaperCharacter.generated.h"
+#include "GAS_PaperHeroBase.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
-class GAS_TEMPLATESP_API AGAS_PaperCharacter : public APaperCharacter, public IAbilitySystemInterface 
+class GAS_TEMPLATESP_API AGAS_PaperHeroBase : public AGAS_PaperCharacter
 {
 	GENERATED_BODY()
-	
+
 public:
-
-	AGAS_PaperCharacter();
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Abilities, meta = (AllowPrivateAccess = "true"))
-	UAbilitySystemComponent* AbilitySystem;
-	
-	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	AGAS_PaperHeroBase();
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

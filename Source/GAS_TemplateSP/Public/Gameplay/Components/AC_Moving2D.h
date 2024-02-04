@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GAS_TemplateSP/Gameplay/Actors/PaperCharacter/GAS_PaperCharacter.h"
-
+#include "Gameplay/Actors/PaperCharacters/GAS_PaperHeroBase.h"
 #include "AC_Moving2D.generated.h"
 
 
@@ -26,7 +25,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	AGAS_PaperCharacter* PaperCharacter;
+	AGAS_PaperHeroBase* PaperCharacter;
 
 	UPROPERTY(EditAnywhere)
 	const UInputAction* LeftInputAction;
