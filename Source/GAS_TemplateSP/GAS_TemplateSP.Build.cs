@@ -9,12 +9,15 @@ public class GAS_TemplateSP : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core",
+		PublicDependencyModuleNames.AddRange(new string[] { 
+			"Core",
 			"CoreUObject",
 			"Engine",
 			"InputCore",
             "GameplayAbilities",
-            "EnhancedInput"
+            "EnhancedInput",
+            "GameplayTasks",
+            "GameplayTags"
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
